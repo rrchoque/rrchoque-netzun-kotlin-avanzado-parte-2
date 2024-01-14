@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">EmptyApp</string>
     <string name="hola_mundo">Hola Mundo</string>
+    <string name="name_dev">Reynaldo Choque</string>
 </resources>
