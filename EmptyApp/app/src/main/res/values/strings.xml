@@ -3,4 +3,15 @@
     <string name="hola_mundo">Hola Mundo</string>
     <string name="name_dev">Reynaldo Choque</string>
     <string name="primer_nombre">Primer nombre</string>
+
+    <string-array name="countries">
+        <item>Peru</item>
+        <item>Bolivia</item>
+        <item>Argentina</item>
+        <item>Chile</item>
+        <item>Paraguay</item>
+        <item>Colombia</item>
+        <item>Venezuela</item>
+        <item>Brazil</item>
+    </string-array>
 </resources>

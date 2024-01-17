@@ -3,6 +3,7 @@ package com.example.emptyapp
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
@@ -45,5 +46,14 @@ class MainActivity : AppCompatActivity() {
                 etName.error = "Este campo no puede estar vacio"
             }
         }
+
+        /**
+         * AutoCompleteTextview
+         */
+        val autoCompleteTextView = binding.autoCompleteTextView
+        val countries :Array<String> = resources.getStringArray(R.array.countries)
+
+        val adapter:ArrayAdapter<String> = ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line, countries)
+        autoCompleteTextView.setAdapter(adapter)
     }
 }
