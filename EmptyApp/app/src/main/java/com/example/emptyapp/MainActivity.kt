@@ -4,6 +4,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.MultiAutoCompleteTextView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
@@ -55,5 +56,12 @@ class MainActivity : AppCompatActivity() {
 
         val adapter:ArrayAdapter<String> = ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line, countries)
         autoCompleteTextView.setAdapter(adapter)
+
+        /**
+         * MultiAutoCompleteTextView
+         */
+        val multiAutoCompleteTextView = binding.multiAutoCompleteTextView
+        multiAutoCompleteTextView.setAdapter(adapter)
+        multiAutoCompleteTextView.setTokenizer(MultiAutoCompleteTextView.CommaTokenizer())
     }
 }
