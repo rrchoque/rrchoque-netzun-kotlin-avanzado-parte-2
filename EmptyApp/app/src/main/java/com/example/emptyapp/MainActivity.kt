@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import com.example.emptyapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +16,9 @@ class MainActivity : AppCompatActivity() {
         //setContentView(R.layout.activity_main)
         setContentView(binding.root)
 
+        /**
+         * TextView
+         */
         //val tvNameDev = findViewById<TextView>(R.id.tvNameDev)
         val tvNameDev = binding.tvNameDev
         //tvNameDev.text = getString(R.string.hola_mundo)
@@ -29,6 +33,16 @@ class MainActivity : AppCompatActivity() {
             setOnClickListener {
                 Toast.makeText(this.context,"Haz hecho click en el texto", Toast.LENGTH_SHORT).show()
                 tvNameDev.setTextColor(Color.RED)
+            }
+        }
+
+        /**
+         * EditText
+         */
+        val etName = binding.etName
+        etName.addTextChangedListener {
+            if (etName.text.isEmpty()){
+                etName.error = "Este campo no puede estar vacio"
             }
         }
     }
