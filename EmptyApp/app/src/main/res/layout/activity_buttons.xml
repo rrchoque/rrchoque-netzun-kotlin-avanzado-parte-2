@@ -30,6 +30,37 @@
             android:layout_height="85dp"
             app:srcCompat="@drawable/bg_rectangle" />
 
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/chipsEntry"
+                app:chipIcon="@drawable/baseline_access_alarm_24"
+                android:text="Alarma"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/chipsEntry"
+                app:chipIcon="@drawable/baseline_account_circle_24"
+                android:text="Usuario"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/chipsEntry"
+                app:chipIcon="@drawable/baseline_agriculture_24"
+                android:text="Agricultura"/>
+
+        </com.google.android.material.chip.ChipGroup>
+
 
     </LinearLayout>
 
