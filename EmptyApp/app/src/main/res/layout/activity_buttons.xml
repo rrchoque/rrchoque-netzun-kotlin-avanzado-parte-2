@@ -33,34 +33,55 @@
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/chipGroup"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip"
+                style="@style/chipsEntry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/chipsEntry"
-                app:chipIcon="@drawable/baseline_access_alarm_24"
-                android:text="Alarma"/>
+                android:text="Alarma"
+                app:chipIcon="@drawable/baseline_access_alarm_24" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip2"
+                style="@style/chipsEntry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/chipsEntry"
-                app:chipIcon="@drawable/baseline_account_circle_24"
-                android:text="Usuario"/>
+                android:text="Usuario"
+                app:chipIcon="@drawable/baseline_account_circle_24" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip3"
+                style="@style/chipsEntry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/chipsEntry"
-                app:chipIcon="@drawable/baseline_agriculture_24"
-                android:text="Agricultura"/>
+                android:text="Agricultura"
+                app:chipIcon="@drawable/baseline_agriculture_24" />
+
 
         </com.google.android.material.chip.ChipGroup>
 
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/medium_orchid"
+                android:text="Masculino" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:buttonTint="@color/medium_orchid"
+                android:text="Femenino" />
+        </RadioGroup>
 
     </LinearLayout>
 

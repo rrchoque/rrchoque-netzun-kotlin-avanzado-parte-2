@@ -3,6 +3,7 @@ package com.example.emptyapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.RadioButton
 import android.widget.Toast
 import com.example.emptyapp.databinding.ActivityButtonsBinding
 import com.example.emptyapp.databinding.ActivityButtonsBinding.*
@@ -24,9 +25,15 @@ class ButtonsActivity : AppCompatActivity() {
         var button = binding.button
         button.text="Modificado"
 
+        var radioGroup = binding.radioGroup
+
         button.setOnClickListener {
-            Toast.makeText(this,"Haz presionado el boton", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this,"Has presionado el boton", Toast.LENGTH_SHORT).show()
             chipGroup.addChip()
+
+            var id = radioGroup.checkedRadioButtonId
+            var rb = findViewById<RadioButton>(id)
+            Toast.makeText(this,"Has seleccionado ${rb.text} ", Toast.LENGTH_SHORT).show()
         }
 
         /**
@@ -44,6 +51,16 @@ class ButtonsActivity : AppCompatActivity() {
                 Toast.makeText(this, "${temp.text} pulsado", Toast.LENGTH_SHORT).show()
             }
         }
+
+        /**
+         * Radio Group
+         */
+
+
+        var radioButton = radioGroup.getChildAt(1) as RadioButton
+        radioButton.text = "Mujer"
+
+        radioGroup.check(binding.radioButton1.id)
     }
 
     fun ChipGroup.addChip(){
