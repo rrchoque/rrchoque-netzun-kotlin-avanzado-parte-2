@@ -2,6 +2,8 @@ package com.example.emptyapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.webkit.WebSettings
+import android.webkit.WebViewClient
 import com.example.emptyapp.databinding.ActivityWidgetsBinding
 
 class WidgetsActivity : AppCompatActivity() {
@@ -12,5 +14,10 @@ class WidgetsActivity : AppCompatActivity() {
 
         binding = ActivityWidgetsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        var webView = binding.webView
+        webView.settings.javaScriptEnabled
+        webView.webViewClient = WebViewClient()
+        webView.loadUrl("https://www.google.com")
     }
 }

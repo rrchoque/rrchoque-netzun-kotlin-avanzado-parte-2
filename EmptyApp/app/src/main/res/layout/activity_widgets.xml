@@ -7,6 +7,10 @@
     android:background="@color/powder_blue"
     tools:context=".WidgetsActivity">
 
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <ImageView
         android:id="@+id/imageView5"
@@ -56,4 +60,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shapImg2" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
