@@ -7,6 +7,7 @@ import android.webkit.WebSettings
 import android.webkit.WebViewClient
 import android.widget.MediaController
 import com.example.emptyapp.databinding.ActivityWidgetsBinding
+import java.util.Calendar
 
 class WidgetsActivity : AppCompatActivity() {
     private lateinit var binding : ActivityWidgetsBinding
@@ -42,6 +43,19 @@ class WidgetsActivity : AppCompatActivity() {
         videoViewInternet.setVideoPath("https://www.defensoria.gob.bo/uploads/boletin/videos/video-sin-titulo-hecho-con-clipchamp-8-compressed-with-flexclip-65a4c200583c2.mp4")
         videoViewInternet.setMediaController(mcInternet)
 
+        /**
+         * CalendarView
+         */
+        var calendarView = binding.calendarView
+        var tvDate = binding.tvDate
 
+        calendarView.setOnDateChangeListener { calendarView, year, month, dayOfMonth ->
+            var date = "$dayOfMonth/${month+1}/$year"
+            tvDate.text=date
+        }
+        var calendar = Calendar.getInstance()
+        calendar.set(2025, 1, 17)
+        calendarView.date = calendar.timeInMillis
+        
     }
 }
