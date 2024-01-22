@@ -7,6 +7,7 @@ import android.webkit.WebSettings
 import android.webkit.WebViewClient
 import android.widget.MediaController
 import android.widget.ProgressBar
+import android.widget.Toast
 import com.example.emptyapp.databinding.ActivityWidgetsBinding
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -80,6 +81,18 @@ class WidgetsActivity : AppCompatActivity() {
 
         GlobalScope.launch {
             updateProgressBar(progressBarHorizontal)
+        }
+
+        /**
+         * RatingBar
+         */
+
+        var ratingBar = binding.ratingBar
+        ratingBar.rating  = 6f
+        ratingBar.numStars = 8
+        ratingBar.max = 8
+        ratingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
+            Toast.makeText(this,"Nivel actual: $rating", Toast.LENGTH_SHORT).show()
         }
     }
 

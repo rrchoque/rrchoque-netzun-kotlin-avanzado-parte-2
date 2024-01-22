@@ -56,13 +56,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progressBar1" />
 
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="10"
+        android:rating="4.5"
+        android:stepSize="0.1"
+        android:isIndicator="false"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:scaleX="1.8"
+        android:scaleY="1.8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
+
     <VideoView
         android:id="@+id/videoViewLocal"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
     <VideoView
         android:id="@+id/videoViewInternet"
@@ -120,5 +135,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shapImg2" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
