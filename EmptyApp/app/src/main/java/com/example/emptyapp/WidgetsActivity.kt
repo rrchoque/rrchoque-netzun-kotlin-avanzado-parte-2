@@ -6,7 +6,11 @@ import android.os.Bundle
 import android.webkit.WebSettings
 import android.webkit.WebViewClient
 import android.widget.MediaController
+import android.widget.ProgressBar
 import com.example.emptyapp.databinding.ActivityWidgetsBinding
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.util.Calendar
 
 class WidgetsActivity : AppCompatActivity() {
@@ -56,6 +60,34 @@ class WidgetsActivity : AppCompatActivity() {
         var calendar = Calendar.getInstance()
         calendar.set(2025, 1, 17)
         calendarView.date = calendar.timeInMillis
-        
+
+        /**
+         * ProgressBar
+         */
+        var progressBarCircular = binding.progressBar1
+
+        progressBarCircular.max = 2000
+        progressBarCircular.progress = 0
+
+        var progressBarHorizontal = binding.progressBar2
+
+        progressBarHorizontal.max = 1000
+        progressBarHorizontal.progress = 0
+
+        GlobalScope.launch {
+            updateProgressBar(progressBarCircular)
+        }
+
+        GlobalScope.launch {
+            updateProgressBar(progressBarHorizontal)
+        }
+    }
+
+    suspend fun updateProgressBar(progressBar: ProgressBar){
+        while (progressBar.progress < progressBar.max){
+            //progressBar.progress += 10
+            delay(100)
+            progressBar.incrementProgressBy(10)
+        }
     }
 }
