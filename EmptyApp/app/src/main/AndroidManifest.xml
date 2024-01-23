@@ -15,7 +15,7 @@
         android:theme="@style/Theme.EmptyApp"
         tools:targetApi="31">
         <activity
-            android:name=".SearchViewActivity"
+            android:name=".LayoutsActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,9 +24,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".SearchViewActivity"
+            android:exported="true" />
+        <activity
             android:name=".WidgetsActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ButtonsActivity"
             android:exported="true" />
