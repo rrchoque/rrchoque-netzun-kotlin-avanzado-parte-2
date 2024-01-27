@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,56 +8,88 @@
     android:gravity="center_horizontal"
     tools:context=".LayoutsActivity">
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="Button" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:background="@color/light_sky_blue"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_margin="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/button6"
-            android:layout_margin="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Button" />
-    </LinearLayout>
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:cropToPadding="false"
         app:srcCompat="@drawable/mike_modo_pro" />
-</LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:layout_above="@+id/linearLayout2">
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="Escala +" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="Escala -" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:layout_above="@+id/linearLayout3">
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="Rotar Izquierda" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="Rotar Derecha" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="Alpha -" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="Alpha +" />
+    </LinearLayout>
+</RelativeLayout>
