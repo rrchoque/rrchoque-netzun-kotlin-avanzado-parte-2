@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,22 +8,35 @@
     android:gravity="center_horizontal"
     tools:context=".LayoutsActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/lineaHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/lineaVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/linearLayout1"
-        android:layout_alignParentTop="true"
+        android:layout_height="0dp"
         android:scaleType="centerCrop"
-        android:cropToPadding="false"
+        app:layout_constraintBottom_toTopOf="@+id/lineaHorizontal"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/mike_modo_pro" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:gravity="center"
-        android:layout_above="@+id/linearLayout2">
+        app:layout_constraintBottom_toTopOf="@+id/space1">
+
         <Button
             android:id="@+id/button1"
             android:layout_width="0dp"
@@ -43,12 +56,19 @@
             android:text="Escala -" />
     </LinearLayout>
 
+    <Space
+        android:id="@+id/space1"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"/>
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:gravity="center"
-        android:layout_above="@+id/linearLayout3">
+        app:layout_constraintBottom_toTopOf="@+id/space2">
+
         <Button
             android:id="@+id/button3"
             android:layout_width="0dp"
@@ -68,12 +88,18 @@
             android:text="Rotar Derecha" />
     </LinearLayout>
 
+    <Space
+        android:id="@+id/space2"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"/>
+
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center"
-        android:layout_alignParentBottom="true">
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center">
         <Button
             android:id="@+id/button5"
             android:layout_width="0dp"
@@ -92,4 +118,41 @@
             android:layout_weight="1"
             android:text="Alpha +" />
     </LinearLayout>
-</RelativeLayout>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="textView1, textView2"/>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="MikeCrack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lineaVertical"
+        app:layout_constraintTop_toTopOf="@+id/lineaHorizontal" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/lineaVertical"
+        app:layout_constraintTop_toTopOf="@+id/lineaHorizontal" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintTop_toBottomOf="@+id/barrier"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
