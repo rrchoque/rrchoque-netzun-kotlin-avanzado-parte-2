@@ -13,6 +13,7 @@ class LayoutsActivity : AppCompatActivity() {
         binding = ActivityLayoutsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        /*
         var imageView = binding.imageView
         var button1 = binding.button1
         var button2 = binding.button2
@@ -46,5 +47,6 @@ class LayoutsActivity : AppCompatActivity() {
         button6.setOnClickListener {
             if (imageView.alpha<1) imageView.alpha+=0.1f
         }
+         */
     }
 }
