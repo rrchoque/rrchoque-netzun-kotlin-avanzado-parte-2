@@ -1,59 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LayoutsActivity"
-    android:stretchColumns="*">
+    android:columnCount="3"
+    android:orientation="horizontal"
+    tools:context=".LayoutsActivity">
 
-    <TableRow
-        android:layout_weight="1">
-        <Button
-            android:layout_column="0"
-            android:layout_span="2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Botón 1"
-            />
-        <Button
-
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Botón 2"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Botón 3"/>
-    </TableRow>
-    <TableRow
-        android:layout_weight="1">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Botón 4"/>
-        <Button
-            android:layout_span="3"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Botón 5"/>
-    </TableRow>
-    <TableRow
-        android:layout_weight="1">
-        <Button
-            android:layout_column="0"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Botón 6"/>
-        <Button
-            android:layout_column="2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Botón 7"/>
-        <Button
-            android:layout_column="3"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Botón 8"/>
-    </TableRow>
-</TableLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Botón 1" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Botón 2" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Botón 3" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Botón 4" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Botón 5" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Botón 6" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Botón 7" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Botón 8" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Botón 9" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Botón 10" />
+</GridLayout>
